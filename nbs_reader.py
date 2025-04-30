@@ -70,7 +70,7 @@ def main():
 
                     f.read(1 + 1 + 2)  # Skip velocity, panning, pitch
 
-                    writer.writerow([tick // 4, instrument, key])
+                    writer.writerow([tick // 2, instrument, key])
 
         print(f"CSV data saved to {output_file}")
     except FileNotFoundError:
