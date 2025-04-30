@@ -8,7 +8,7 @@ INSTRUMENT_BLOCKS = {
     2: "minecraft:stone",          # Bass Drum
     3: "minecraft:sand",           # Snare Drum
     4: "minecraft:glass",          # Click
-    5: "minecraft:wool",           # Guitar
+    5: "minecraft:white_wool",     # Guitar
     6: "minecraft:clay",           # Flute
     7: "minecraft:gold_block",     # Bell
     8: "minecraft:packed_ice",     # Chime
@@ -56,7 +56,7 @@ for note in notes:
 
 # Determine schematic size
 max_tick = max(tick_map.keys())
-width = (max_tick + 2) * 16
+width = (max_tick + 2) * 8
 height = 2
 depth = 5
 
@@ -77,7 +77,7 @@ offsets = [
 
 # Place blocks
 for tick, notes_on_tick in tick_map.items():
-    base_x = tick * 16 + 2
+    base_x = tick * 8 + 2
     base_z = 2  # Center z, to allow space left and right
     for i, (t, instrument, key) in enumerate(notes_on_tick):
         dx, dz = offsets[i] if i < len(offsets) else (i + 3, 0)  # Extend if more than 8 ?? 
